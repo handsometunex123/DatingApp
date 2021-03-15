@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   registerMode: boolean = false;
+  users$: Observable<any>;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +19,10 @@ export class HomeComponent implements OnInit {
   registerToggle(){
     this.registerMode = !this.registerMode;
   }
+
+  cancelRegister($event){
+    this.registerMode = $event;
+  }
+
 
 }
