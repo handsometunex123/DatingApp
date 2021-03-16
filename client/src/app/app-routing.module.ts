@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: '',
     runGuardsAndResolvers: 'always',
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'members',
@@ -38,9 +38,9 @@ const routes: Routes = [
       },
     ]
   },
-  {path:'errors', component: TestErrorsComponent},
-  {path:'not-found', component: NotFoundComponent},
-  {path:'server-error', component: ServerErrorComponent},
+  { path: 'errors', component: TestErrorsComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
   {
     path: '**',
     component: NotFoundComponent,
