@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators'
 import { User } from '../_models/user';
-import { MembersService } from './members.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class AccountService {
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
-  constructor(private http: HttpClient, private memberService: MembersService ) { }
+  constructor(private http: HttpClient ) { }
   
 
   login(model: any): Observable<any> {
@@ -45,7 +44,6 @@ export class AccountService {
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
-    this.memberService.members = [];
   }
 
 
