@@ -1,3 +1,4 @@
+import { ListsComponent } from './lists/lists.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -29,6 +30,7 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
     NavComponent,
     HomeComponent,
     RegisterComponent,
+    ListsComponent,
     MemberListComponent,
     MemberDetailComponent,
     TestErrorsComponent,
