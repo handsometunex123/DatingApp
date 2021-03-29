@@ -28,7 +28,9 @@ namespace API.Entities
         public string City { get; set; }
 
         public string Country { get; set; }
+        
         public string LookingFor { get; set; }
+
         public ICollection<Photo> Photos { get; set; }
 
         //List of users that liked the currently logged in user
@@ -36,5 +38,9 @@ namespace API.Entities
 
         //List of users that the currently logged in user has liked
         public ICollection<UserLike> LikedUsers { get; set; }
+
+        public ICollection<Message> MessagesSent { get; set; }
+
+        public ICollection<Message> MessagesReceived { get; set; }
     }
 }
